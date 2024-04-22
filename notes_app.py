@@ -93,7 +93,7 @@ if __name__ == '__main__':
 
         elif choice == '3':
             note_id = input("Введите ID редактируемой записи: ")
-            new_title = input("Введите новй заголовок: ")
+            new_title = input("Введите новый заголовок: ")
             new_text = input("Введите новый текст: ")
             notes_app.edit_note(note_id, new_title, new_text)
             print("Запись отредактирована!")
