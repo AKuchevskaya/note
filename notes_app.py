@@ -46,7 +46,7 @@ class NotesApp:
     def read_notes(self, filter_date=None):
         """Метод чтения заметки"""
         if filter_date:
-            filtered_notes = [note for note in self.notes if note.date == filter_date]
+            filtered_notes = [note for note in self.notes if note.date.startswith(filter_date)]
             return filtered_notes
         return self.notes
 
@@ -87,8 +87,8 @@ if __name__ == '__main__':
 
         elif choice == '2':
             filter_date = input("Введите дату записи в формате (yyyy-mm-dd HH:MM:SS) или оставьте поле пустым: ")
-            notes = notes_app.read_notes(filter_date)
-            for note in notes:
+            filtered_notes = notes_app.read_notes(filter_date)
+            for note in filtered_notes:
                 print(f"{note.id}) {note.title}: {note.text} ({note.date})")
 
         elif choice == '3':
